@@ -44,7 +44,7 @@ collection.upsert(
 
 print(f"Total documents stored: {collection.count()}")
 
-query = "how do languages models work"
+query = "how to deploy applications"
 
 query_embeddings = model.encode(query).tolist()
 
@@ -67,7 +67,7 @@ for i in range(len(results['documents'][0])):
 results_filtered = collection.query(
     query_embeddings=[query_embeddings],
     n_results=2,
-    where={"topic": "llm"}
+    where={"topic": "devops"}
 )
 
 print(f"\n--- Query WITH filter (topic = llm only) ---")
